@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>历史归档</title><meta name="robots" content="noindex,nofollow,noarchive">
+<style>
+:root {
+  color-scheme: light;
+  --surface: #fcfcfb; --page: #f9f9f7;
+  --ink: #0b0b0b; --ink-2: #52514e; --muted: #898781;
+  --grid: #e1e0d9; --baseline: #c3c2b7; --border: rgba(11,11,11,0.10);
+  --series: #2a78d6;
+  --s: #104281; --a: #1c5cab; --b: #2a78d6;
+  --c: #5598e7; --d: #86b6ef;
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    color-scheme: dark;
+    --surface: #1a1a19; --page: #0d0d0d;
+    --ink: #ffffff; --ink-2: #c3c2b7; --muted: #898781;
+    --grid: #2c2c2a; --baseline: #383835; --border: rgba(255,255,255,0.10);
+    --series: #3987e5;
+    --s: #cde2fb; --a: #b7d3f6; --b: #86b6ef;
+    --c: #5598e7; --d: #1c5cab;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; padding: 32px 20px 64px;
+  background: var(--page); color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 15px; line-height: 1.6;
+}
+.wrap { max-width: 1080px; margin: 0 auto; }
+h1 { font-size: 26px; margin: 0 0 4px; font-weight: 600; }
+h2 { font-size: 18px; margin: 36px 0 12px; font-weight: 600;
+      padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+h2 .count { color: var(--muted); font-weight: 400; font-size: 15px; }
+.sub { color: var(--ink-2); margin: 0 0 24px; font-size: 14px; }
+.card { background: var(--surface); border: 1px solid var(--border);
+         border-radius: 10px; padding: 18px 20px; }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+         gap: 12px; margin: 20px 0 8px; }
+.kpi { background: var(--surface); border: 1px solid var(--border);
+        border-radius: 10px; padding: 14px 16px; }
+.kpi .label { color: var(--ink-2); font-size: 13px; margin-bottom: 6px; }
+.kpi .value { font-size: 30px; font-weight: 600; line-height: 1.1; }
+.kpi .note { color: var(--muted); font-size: 12px; margin-top: 4px; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--grid); }
+th { color: var(--ink-2); font-weight: 500; font-size: 13px; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+tbody tr:hover { background: var(--page); }
+.badge { display: inline-block; min-width: 22px; text-align: center;
+          padding: 1px 7px; border-radius: 999px; font-size: 12px;
+          font-weight: 600; color: #fff; }
+.badge.S { background: var(--s); } .badge.A { background: var(--a); }
+.badge.B { background: var(--b); } .badge.C { background: var(--c); color: var(--ink); }
+.badge.D { background: var(--d); color: var(--ink); }
+.pill { display: inline-block; padding: 1px 8px; border-radius: 999px;
+         font-size: 12px; border: 1px solid var(--border); color: var(--ink-2); }
+.muted { color: var(--muted); }
+a { color: var(--series); }
+.empty { color: var(--muted); font-style: normal; }
+.act { display: grid; grid-template-columns: 24px 1fr; gap: 10px;
+        padding: 10px 0; border-bottom: 1px solid var(--grid); }
+.act:last-child { border-bottom: none; }
+.act .n { color: var(--muted); font-variant-numeric: tabular-nums; }
+.act-head { font-weight: 600; margin: 14px 0 4px; }
+.act-head.urgent { color: var(--ink); }
+.act-head.week { color: var(--ink-2); }
+.act.urgent { border-left: 3px solid var(--a); padding-left: 10px; }
+.act.week { border-left: 3px solid var(--d); padding-left: 10px; }
+.act.soon { border-left: 3px solid var(--grid); padding-left: 10px; }
+.act-head.soon { color: var(--muted); font-weight: 500; }
+.bars { display: grid; gap: 8px; }
+.bar-row { display: grid; grid-template-columns: 96px 1fr 48px;
+            align-items: center; gap: 10px; font-size: 13px; }
+.bar-track { background: var(--grid); border-radius: 4px; height: 16px; }
+.bar-fill { background: var(--series); height: 16px;
+             border-radius: 0 4px 4px 0; min-width: 2px; }
+.bar-row .n { text-align: right; color: var(--ink-2);
+               font-variant-numeric: tabular-nums; }
+footer { margin-top: 48px; color: var(--muted); font-size: 12px; }
+</style></head>
+<body><div class="wrap"><style>.sitebar{margin:0 0 18px;padding:0 0 12px;border-bottom:1px solid var(--border,rgba(11,11,11,.1));font-size:14px;line-height:1.5;}.sitebar a{color:#1c5cab;text-decoration:none;margin-right:18px;}.sitebar a:hover{text-decoration:underline;}.sitebar a.on{color:inherit;font-weight:600;}</style><div class="sitebar"><a href="../index.html">今日日报</a><a href="../weekly.html">周报</a><a href="../archive/index.html" class="on">历史归档</a></div>
+<h1>历史归档</h1>
+<p class="sub">共 1 份（日报保留最近若干天，周报全部保留）</p>
+<table><thead><tr><th>日期</th><th>类型</th><th>链接</th></tr></thead><tbody><tr><td>2026-09-14</td><td>日报</td><td><a href="daily_20260914.html">打开</a></td></tr></tbody></table>
+<footer>由 2027 秋招 Radar 生成于 2026-09-14 23:33:30　·　匹配分为规则驱动的参考值，请以 JD 原文为准</footer>
+</div></body></html>
